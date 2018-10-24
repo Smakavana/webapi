@@ -1,0 +1,35 @@
+<div class="component">
+  <header>
+    <span class="page-title">User List</span>
+    <span> | <a routerLink='/users/create'>Create New</a></span>
+  </header>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>UserName</td>
+        <td>Phone</td>
+        <td>Email</td>
+        <td>Review?</td>
+        <td>Admin?</td>
+        <td>Actions</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+          <td>{{ user.Id }}</td>
+          <td>{{ user.FirstName }} {{ user.LastName }}</td>
+          <td>{{ UserName }}</td>
+          <td>{{ user.Phone }}</td>
+          <td>{{ user.Email }}</td>
+          <td>{{ user.IsReviewer ? "Yes" : "No" }}</td>
+          <td>{{ user.IsAdmin ? "Yes" : "No" }}</td>
+          <td>
+            <span><a routerLink='/users/detail/{{ user.Id }}'>View</a></span>
+            <span><a routerLink='/users/edit/{{ user.Id }}'>Edit</a></span>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
