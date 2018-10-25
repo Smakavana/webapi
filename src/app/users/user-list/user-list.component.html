@@ -2,6 +2,7 @@
   <header>
     <span class="page-title">User List</span>
     <span> | <a routerLink='/users/create'>Create New</a></span>
+    <span> | <input [(ngModel)] = 'searchCriteria' type="text"></span>
   </header>
   <table class="table table-sm" *ngIf="users">
     <thead>
@@ -17,7 +18,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users | sortUsers">
+      <tr *ngFor="let user of users | searchUsers:searchCriteria | sortUsers:sortBy">
           <td>{{ user.Id }}</td>
           <td>{{ user.FirstName }} {{ user.LastName }}</td>
           <td>{{ user.UserName }}</td>

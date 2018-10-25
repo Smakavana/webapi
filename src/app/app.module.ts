@@ -12,6 +12,7 @@ import { UserDeleteComponent } from './users/user-delete/user-delete.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
 import { BoolDisplayPipe } from './pipes/bool-display.pipe';
 import { SortUsersPipe } from './pipes/sort-users.pipe';
+import { SearchUsersPipe } from './pipes/search-users.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SortUsersPipe } from './pipes/sort-users.pipe';
     UserDeleteComponent,
     UserEditComponent,
     BoolDisplayPipe,
-    SortUsersPipe
+    SortUsersPipe,
+    SearchUsersPipe
   ],
   imports: [
     BrowserModule,

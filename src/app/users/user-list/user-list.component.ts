@@ -11,6 +11,9 @@ export class UserListComponent implements OnInit {
 
   users: User[];
 
+  sortBy = 'LastName';
+  searchCriteria = '';
+
   constructor(private service : UserService) {
 
    }
