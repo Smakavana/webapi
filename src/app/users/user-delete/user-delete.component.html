@@ -1,3 +1,12 @@
-<p>
-  user-delete works!
-</p>
+<div class="component">
+    <header>
+      <span class="page.title">Delete User</span>
+      <span><a routerLink='/users/list'> | Back to List</a></span>
+    </header>
+  <div class='container' *ngIf="user">
+    <h3>Proceed with delete?</h3>
+      <div>
+          <button class="btn btn-primary" (click)="remove()">Delete</button>
+        </div>
+  </div> 
+ </div>

@@ -3,7 +3,7 @@
     <span class="page-title">User List</span>
     <span> | <a routerLink='/users/create'>Create New</a></span>
   </header>
-  <table class="table table-sm">
+  <table class="table table-sm" *ngIf="users">
     <thead>
       <tr>
         <td>Id</td>
@@ -17,17 +17,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users">
+      <tr *ngFor="let user of users | sortUsers">
           <td>{{ user.Id }}</td>
           <td>{{ user.FirstName }} {{ user.LastName }}</td>
           <td>{{ user.UserName }}</td>
           <td>{{ user.Phone }}</td>
           <td>{{ user.Email }}</td>
-          <td>{{ user.IsReviewer ? "Yes" : "No" }}</td>
+          <td>{{ user.IsReviewer | bool }}</td>
           <td>{{ user.IsAdmin ? "Yes" : "No" }}</td>
           <td>
             <span><a routerLink='/users/detail/{{ user.Id }}'>View</a></span>
              | <span><a routerLink='/users/edit/{{ user.Id }}'>Edit</a></span>
+             | <span><a routerLink='/users/delete/{{ user.Id }}'>Delete</a></span> 
           </td>
       </tr>
     </tbody>
